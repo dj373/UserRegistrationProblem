@@ -12,3 +12,5 @@ function checkName() {
 
 read -p "Enter first name (John) " fname
 checkName $fname
+read -p "Enter last name (Doe) " lname
+checkName $lname
