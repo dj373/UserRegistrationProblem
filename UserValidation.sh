@@ -27,6 +27,15 @@ function checkMobileNumber() {
 		echo "Invalid Number! Enter 2 digit country code followed by 10 digit mobile number"
 	fi
 }
+function checkPassword() {
+	passwordCheck="^([a-z]*[A-Z]+[0-9]+[!@#$%^&*_])$"
+	if [[ $password =~ $passwordCheck ]] && [[ ${#password} -ge 8 ]]
+	then
+		echo "Valid! Password Accepted!!"
+	else
+		echo "Invalid Format! Refer instructions."
+	fi
+}
 read -p "Enter first name (John) " fname
 checkName $fname
 read -p "Enter last name (Doe) " lname
@@ -35,3 +44,5 @@ read -p "Enter email address (johndoe@jd.com) " email
 checkEmail $email
 read -p "Enter mobile number (91 XXXXXXXXXX) " mobile
 checkMobileNumber $mobile
+read -p "Enter password (Minimum 8 digits including special symbols,numbers and Uppercase letters) " password
+checkPassword $password
