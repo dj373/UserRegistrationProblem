@@ -18,9 +18,20 @@ function checkEmail() {
 		echo "Invalid format!"
 	fi
 }
+function checkMobileNumber() {
+	mobileCheck="^[0-9]{2}[ ][0-9]{10}$"
+	if [[ $mobile =~ $mobileCheck ]]
+	then
+		echo "Valid Number!"
+	else
+		echo "Invalid Number! Enter 2 digit country code followed by 10 digit mobile number"
+	fi
+}
 read -p "Enter first name (John) " fname
 checkName $fname
 read -p "Enter last name (Doe) " lname
 checkName $lname
 read -p "Enter email address (johndoe@jd.com) " email
 checkEmail $email
+read -p "Enter mobile number (91 XXXXXXXXXX) " mobile
+checkMobileNumber $mobile
